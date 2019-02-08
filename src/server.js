@@ -4,12 +4,15 @@ const query = require('querystring');
 const htmlHandler = require('./htmlResponses.js');
 const jsonHandler = require('./jsonResponses.js');
 
+console.dir("hello");
+
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
 const urlStruct = {
   '/': htmlHandler.getIndex,
   '/success': jsonHandler.success,
   '/badRequest': jsonHandler.badRequest,
+  '/bundle.js': htmlHandler.getBundle,
   notFound: jsonHandler.notFound,
 };
 
